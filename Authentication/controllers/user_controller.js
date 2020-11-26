@@ -19,3 +19,15 @@ module.exports.signUp = function(req,res) {
         title: "Sign Up "
     })
 }
+
+// Get the Sign-up Data from the form action
+
+module.exports.create = function(req,res) {
+    // TODO: Add later
+}
+
+
+// get the sign in session data
+module.exports.createSession = function(req,res) {
+    // TODO: Add later
+}

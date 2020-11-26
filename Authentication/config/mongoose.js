@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/nodeial_development', {useNewUrlParser: true,
+mongoose.connect('mongodb://localhost/development', {useNewUrlParser: true,
 useUnifiedTopology: true
 });
 

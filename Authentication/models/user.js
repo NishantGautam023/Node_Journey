@@ -21,3 +21,5 @@ const userSchema = new mongoose.Schema({
 const User = mongoose.model('User', userSchema);
 
 module.exports = User;
+
+//  u mean ./install inubuntu...yes wait // wait sir 5 min i will install...

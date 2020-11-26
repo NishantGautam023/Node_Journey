@@ -25,23 +25,21 @@ module.exports.signUp = function(req,res) {
 // Get the Sign-up Data from the form action
 
 module.exports.create = function(req,res) {
-    //1. Read the body parameters the form one's(i.e name="")
-    if (req.body.password != req.body.confirm_password) {
+    console.log(req.body)
+    console.log(req.body.password)
+    console.log(req.body.confirmPassword)
+   //plz resolve thank u.. what wasthe error sir?
+    if (req.body.password != req.body.confirmPassword) {
         return res.redirect('back') // goes back to whichever page it came from
     }
-    //2. if the passwords are same. Try to find user with the same email id
-         // because the email has to be unique. 
-    
-    /* 2.1. use the  exported the user models to find it User.
-     findone by email and then a callback function for err and user 
-      as argument                         */
+                    
      User.findOne({email: req.body.email},function(err, user){
-        // for error in one line because it is short :)
+        // for error in one line because it is short 
         if(err){console.log(`Error in finding  user in signing up`); return}
 
-    // 2.2 if user is not found then we create a user object
+    
     if(!user) {
-        // pass the request body directly (name,email,password) and store it
+        
         User.create(req.body, function(err, user){
             if(err){console.log(`Error in creating  user while signing up`); return }
             

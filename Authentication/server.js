@@ -34,3 +34,7 @@ app.listen(port, function(err) {
     }
     console.log(`Server is running on port ${port}`)
 })
+
+// DB NOT SHOWING IN roboO3T
+// sir?
+//open robo#T ?? 

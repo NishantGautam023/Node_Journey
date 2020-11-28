@@ -1,7 +1,7 @@
 const User = require('../models/user')
 
 module.exports.profile = function(req,res) {
-    res.render('user', {
+    res.render('user_profile', {
         title: "User Profile"
     })
 }
@@ -28,7 +28,7 @@ module.exports.create = function(req,res) {
     console.log(req.body)
     console.log(req.body.password)
     console.log(req.body.confirmPassword)
-   //plz resolve thank u.. what wasthe error sir?
+   
     if (req.body.password != req.body.confirmPassword) {
         return res.redirect('back') // goes back to whichever page it came from
     }
@@ -60,5 +60,6 @@ module.exports.create = function(req,res) {
 
 // get the sign in session data
 module.exports.createSession = function(req,res) {
-    // TODO: Add later
+    
+    return res.redirect('/')
 }

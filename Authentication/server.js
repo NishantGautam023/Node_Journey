@@ -5,6 +5,12 @@ const app = express();
 const expressLayouts = require('express-ejs-layouts');
 const db = require('./config/mongoose')
 
+// used for session cookie
+const session = require('express-session');
+const passport = require('passport');
+const passportLocal = require('./config/passport-local_strategy');
+
+
 // Reading through the POST requests
 app.use(express.urlencoded({extended: true}));
 // setting up the cookie parser
@@ -19,11 +25,29 @@ app.use(expressLayouts);
 app.set('layout extractStyles', true)
 app.set('layout extractScripts',true)
 
-// use the router
-app.use('/', require('./routes'));
-
 app.set('view engine', 'ejs')
 app.set('views', './views')
+
+
+// using the express-session for adding it as a middleware
+app.use(session({
+    name: "Nodeial",
+    // TODO: Change the secret key beofre deployment in production  mode
+    secret: "SomethingFromNothing",
+    saveUninitialized: false,
+    resave: false,
+    cookie: {
+        maxAge: (1000 * 60* 100)
+    }
+}));
+
+// tell the app to use passport 
+app.use(passport.initialize());
+app.use(passport.session());
+
+
+// use the router
+app.use('/', require('./routes'));
 
 
 
@@ -35,6 +59,3 @@ app.listen(port, function(err) {
     console.log(`Server is running on port ${port}`)
 })
 
-// DB NOT SHOWING IN roboO3T
-// sir?
-//open robo#T ?? 

@@ -77,3 +77,12 @@ module.exports.createSession = function(req,res) {
     
     return res.redirect('/')
 }
+
+// for sign out 
+module.exports.destroySession = function(req, res) {
+    //1.log out of the pager
+    //2. then redirect to the home page.
+    req.logout();
+    //1. this is given by passport to request
+    return res.redirect('/')
+}

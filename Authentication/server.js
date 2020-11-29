@@ -44,12 +44,13 @@ app.use(session({
 // tell the app to use passport 
 app.use(passport.initialize());
 app.use(passport.session());
+app.use(passport.setAuthenticatedUser);
 
 
 // use the router
 app.use('/', require('./routes'));
 
-
+// mam can i call u?i'll try finding the error first ok
 
 app.listen(port, function(err) {
     if(err) {

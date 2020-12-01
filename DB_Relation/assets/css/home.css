@@ -2,3 +2,12 @@ body {
     margin: 0px;
     background-color: pink;
 }
+.heading {
+    
+    margin: 12px;
+    font-size: 48px;
+}
+.posts {
+    text-align: center;
+    font-size: 22px;
+}

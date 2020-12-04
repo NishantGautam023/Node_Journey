@@ -1,6 +1,12 @@
 const express = require('express')
 const port = process.env.PORT || 3000;
 const cookieParser = require('cookie-parser');
+
+// using the body-parser
+const bodyParser = require('body-parser');
+
+
+
 const app = express();
 const expressLayouts = require('express-ejs-layouts');
 const db = require('./config/mongoose')
@@ -12,6 +18,11 @@ const passportLocal = require('./config/passport-local_strategy');
 
 // using mongo store as our persistant cookie
 const MongoStore = require('connect-mongo')(session);
+
+// using body-parser
+app.use(bodyParser.urlencoded({
+    extended: true
+}))
 
 // Reading through the POST requests
 app.use(express.urlencoded({extended: true}));

@@ -19,11 +19,14 @@
 
         <section id="">
           <h2 class="heading">Write your own posts</h2>
-          <form action="/post/create" id="posts" method="POST">
-            <textarea  name="content" id="min-h-screen text-center py-24" cols="30" rows="3" placeholder="Type Here"></textarea>
-            <input type="submit" value="POST">
-            
-          </form>
+          <% if (locals.user) { %>
+           
+            <form action="/post/create" id="posts" method="POST">
+              <textarea  name="content" id="min-h-screen text-center py-24" cols="30" rows="3" placeholder="Type Here"></textarea>
+              <input type="submit" value="POST">
+              
+            </form>
+            <% } %>
 
           <div id="post-list-container">
             <ul>

@@ -1,6 +1,17 @@
+const Post = require('../models/posts');
+
 module.exports.home = function(req, res) {
 
-    res.render('home', {
-        title: "Home"
-    })
+ Post.find({}, function(err, posts) {
+
+     res.render('home', {
+         title: "NOdeial | Home",
+         posts: posts
+     })
+    
+
+    
+ } )
+
+
 }

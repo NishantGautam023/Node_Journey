@@ -1,5 +1,5 @@
 // The post is belonging  to the post schema so importing it.
-const Post = require('../models/post')
+const Post = require('../models/posts')
 
 
 module.exports.create = function(req,res) {
